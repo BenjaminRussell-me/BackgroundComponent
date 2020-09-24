@@ -1,5 +1,5 @@
 # background-generator
-
+Goal of this project is to dynamically create interesting geometric backgrounds.
 ## Project setup
 ```
 npm install
