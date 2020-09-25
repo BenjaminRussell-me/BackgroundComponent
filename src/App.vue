@@ -2,22 +2,21 @@
   <div id="holder">
     <background-base></background-base>
   </div>
-
 </template>
 
 <script>
 import BackgroundBase from "@/components/BackgroundBase";
 export default {
   name: "App",
-  components: {BackgroundBase}
+  components: { BackgroundBase }
 };
 </script>
 
 <style lang="scss">
-body{
+body {
   margin: 0;
 }
-#holder{
+#holder {
   height: 100vh;
   width: 100vw;
 }

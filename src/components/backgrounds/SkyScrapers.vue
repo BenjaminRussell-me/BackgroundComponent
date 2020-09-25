@@ -1,24 +1,22 @@
 <template>
   <div class="backgroundBase">
     <div
-      class="rectangles"
-      v-for="(rec, index) in recArr"
-      :key="index"
+        class="rectangles"
+        v-for="(rec, index) in recArr"
+        :key="index"
       :style="{
-        height: rec.size.height + 'px',
         width: rec.size.width + 'px',
         top: rec.position.top + '%',
         left: rec.position.left + '%',
         background: rec.color
       }"
-      :class="{ animated: getAnimated(rec.size.width) && rec.size.height > 0 }"
     ></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "DefaultBackground",
+  name: "SkyScrapers",
   data() {
     return {
       recArr: []
@@ -27,7 +25,7 @@ export default {
   props: {
     ammount: {
       type: Number,
-      default: 200
+      default: 150
     },
     colorControl:{
       type: Object,
@@ -56,7 +54,7 @@ export default {
         let top = this.getRandomInt(0, 100);
         let alpha = this.getRandomInt(0, 4);
         let color =
-          (left + top) / this.colorControl.shift + this.colorControl.color;
+            (left + top) / this.colorControl.shift + this.colorControl.color;
         this.recArr.push(new Rectangle(width, height, left, top, alpha, color));
       }
     },

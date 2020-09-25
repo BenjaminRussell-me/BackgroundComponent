@@ -6,23 +6,24 @@
 
 <script>
 import DefaultBackground from "@/components/backgrounds/DefaultBackground";
+import SkyScrapers from "@/components/backgrounds/SkyScrapers";
 export default {
   name: "BackgroundBase",
   data() {
     return {
-      boundBackground: DefaultBackground
+      boundBackground: SkyScrapers
     };
   },
   components: {
-    DefaultBackground
+    DefaultBackground,
+    SkyScrapers
   }
 };
 </script>
 
 <style scoped lang="scss">
-#backgroundBase{
+#backgroundBase {
   height: 100%;
   width: 100%;
-  background: red;
 }
 </style>
