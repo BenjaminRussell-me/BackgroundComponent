@@ -1,10 +1,19 @@
-import Vue from "vue";
-import App from "./App.vue";
-import store from "./store";
+import * as components from "./components";
 
-Vue.config.productionTip = false;
+const RandomBackgrounds = {
+  // eslint-disable-next-line no-unused-vars
+  install(Vue, options = {}) {
+    // components
+    for (const componentName in components) {
+      const component = components[componentName];
 
-new Vue({
-  store,
-  render: h => h(App)
-}).$mount("#app");
+      Vue.component(component.name, component);
+    }
+  }
+};
+
+export default RandomBackgrounds;
+
+if (typeof window !== "undefined" && window.Vue) {
+  window.Vue.use(RandomBackgrounds);
+}

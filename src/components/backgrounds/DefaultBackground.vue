@@ -42,7 +42,7 @@ export default {
     },
     setRectangles() {
       class Rectangle {
-        constructor(width,height,left,top,alpha,color, delay) {
+        constructor(width, height, left, top, alpha, color, delay) {
           this.size = { width: width, height: height };
           this.color = `hsla(${color},100%,70%,0.${alpha})`;
           this.position = { left: left, top: top };

@@ -1,10 +1,11 @@
 {
-  "name": "background-generator",
+  "name": "random-backgrounds",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/backgrounds.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name backgrounds src/main.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -29,5 +30,9 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "files": [
+    "dist/*",
+    "src/*"
+  ]
 }

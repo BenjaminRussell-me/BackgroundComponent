@@ -15,14 +15,7 @@
 
 <script>
 export default {
-  name: "DefaultBackground",
-  data() {
-    return {
-      dimensions: " height: 60px; width: 60px; background: red",
-      blockArr: [1, 2]
-    };
-  },
-  methods: {}
+  name: "Blocks"
 };
 </script>
 

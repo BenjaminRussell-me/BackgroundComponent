@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import DefaultBackground from "@/components/backgrounds/DefaultBackground";
-import SkyScrapers from "@/components/backgrounds/SkyScrapers";
+import DefaultBackground from "../backgrounds/DefaultBackground";
+import SkyScrapers from "../backgrounds/SkyScrapers";
 export default {
   name: "BackgroundBase",
   data() {
