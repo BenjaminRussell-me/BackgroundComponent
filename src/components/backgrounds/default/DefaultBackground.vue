@@ -25,14 +25,14 @@ export default {
     };
   },
   props: {
-    ammount: {
+    amount: {
       type: Number,
       default: 200
     },
     colorControl:{
       type: Object,
       default() {
-        return{color: 190, shift: 5,}
+        return { color: 190, shift: 5 };
       }
     },
     saturation: {
@@ -50,14 +50,13 @@ export default {
     },
     setRectangles() {
       class Rectangle {
-        constructor(width, height, left, top, alpha, color, delay) {
+        constructor(width, height, left, top, alpha, color, lightness, saturation) {
           this.size = { width: width, height: height };
-          this.color = `hsla(${color},${this.saturation}%,${this.lightness}%,0.${alpha})`;
+          this.color = `hsla(${color},${saturation}%,${lightness}%,0.${alpha})`;
           this.position = { left: left, top: top };
-          this.delay = delay;
         }
       }
-      for (let i = 0; i < this.ammount; i++) {
+      for (let i = 0; i < this.amount; i++) {
         let width = this.getRandomInt(10, 550);
         let height = width - this.getRandomInt(width / 2.5, 25);
         let left = this.getRandomInt(0, 100);
@@ -65,7 +64,20 @@ export default {
         let alpha = this.getRandomInt(0, 4);
         let color =
           (left + top) / this.colorControl.shift + this.colorControl.color;
-        this.recArr.push(new Rectangle(width, height, left, top, alpha, color));
+        let lightness = this.lightness;
+        let saturation = this.saturation;
+        this.recArr.push(
+          new Rectangle(
+            width,
+            height,
+            left,
+            top,
+            alpha,
+            color,
+            lightness,
+            saturation
+          )
+        );
       }
     },
     getRandomInt(min, max) {
