@@ -32,8 +32,16 @@ export default {
     colorControl:{
       type: Object,
       default() {
-        return{color: 190, shift: 5}
+        return{color: 190, shift: 5,}
       }
+    },
+    saturation: {
+      type: Number,
+      default: 100
+    },
+    lightness: {
+      type: Number,
+      default: 70
     }
   },
   methods: {
@@ -44,7 +52,7 @@ export default {
       class Rectangle {
         constructor(width, height, left, top, alpha, color, delay) {
           this.size = { width: width, height: height };
-          this.color = `hsla(${color},100%,70%,0.${alpha})`;
+          this.color = `hsla(${color},${this.saturation}%,${this.lightness}%,0.${alpha})`;
           this.position = { left: left, top: top };
           this.delay = delay;
         }
@@ -72,7 +80,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .backgroundBase {
   height: 100%;
   width: 100%;
