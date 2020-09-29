@@ -1,3 +1,3 @@
-import DefaultBackground from "../../components/backgrounds/DefaultBackground";
-// import SkyScrapers from "../../components/backgrounds/SkyScrapers";
-export default DefaultBackground;
+export { default as Blocks } from "./blocks";
+export { default as DefaultBackground } from "./default";
+export { default as SkyScrapers } from "./sky_scrapers";

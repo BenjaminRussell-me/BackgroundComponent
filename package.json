@@ -1,7 +1,7 @@
 {
   "name": "random-backgrounds",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "dist/backgrounds.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",

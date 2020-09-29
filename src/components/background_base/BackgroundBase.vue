@@ -1,12 +1,13 @@
 <template>
   <div id="backgroundBase">
-    <component v-bind:is="boundBackground"> </component>
+    <component v-bind:is="background"> </component>
   </div>
 </template>
 
 <script>
-import DefaultBackground from "../backgrounds/DefaultBackground";
-import SkyScrapers from "../backgrounds/SkyScrapers";
+import DefaultBackground from "../backgrounds/default/DefaultBackground";
+import SkyScrapers from "../backgrounds/sky_scrapers/SkyScrapers";
+import Blocks from "../backgrounds/blocks/Blocks";
 export default {
   name: "BackgroundBase",
   data() {
@@ -16,7 +17,14 @@ export default {
   },
   components: {
     DefaultBackground,
-    SkyScrapers
+    SkyScrapers,
+    Blocks
+  },
+  props: {
+    background: {
+      type: String,
+      default: "DefaultBackground"
+    }
   }
 };
 </script>
