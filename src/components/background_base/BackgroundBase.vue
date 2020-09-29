@@ -1,6 +1,13 @@
 <template>
   <div id="backgroundBase">
-    <component v-bind:is="background"> </component>
+    <component
+      v-bind:is="background"
+      :ammount="amount"
+      :lightness="lightness"
+      :colorControl="colorControl"
+      :saturation="saturation"
+    >
+    </component>
   </div>
 </template>
 
@@ -24,6 +31,24 @@ export default {
     background: {
       type: String,
       default: "DefaultBackground"
+    },
+    amount: {
+      type: Number,
+      default: 200
+    },
+    colorControl: {
+      type: Object,
+      default() {
+        return { color: 190, shift: 5 };
+      }
+    },
+    saturation: {
+      type: Number,
+      default: 100
+    },
+    lightness: {
+      type: Number,
+      default: 70
     }
   }
 };
